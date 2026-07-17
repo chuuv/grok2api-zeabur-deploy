@@ -1,4 +1,4 @@
-ARG GROK2API_BASE_IMAGE=ghcr.io/chenyme/grok2api:v3.0.2
+ARG GROK2API_BASE_IMAGE=ghcr.io/chenyme/grok2api:latest
 FROM ${GROK2API_BASE_IMAGE}
 
 COPY docker-entrypoint-wrapper.sh /usr/local/bin/grok2api-zeabur-entrypoint

@@ -9,11 +9,11 @@ variables so Zeabur can run the service without a single-file config mount.
 
 ## Update Policy
 
-- Default base image: `ghcr.io/chenyme/grok2api:v3.0.2`.
-- To manually follow upstream, change `GROK2API_BASE_IMAGE` in `Dockerfile` to a
-  newer upstream release tag and redeploy.
-- If you prefer always pulling the latest upstream image during rebuild, change
-  it to `ghcr.io/chenyme/grok2api:latest`.
+- Default base image: `ghcr.io/chenyme/grok2api:latest`.
+- To follow upstream manually, redeploy this service when the upstream image is
+  updated.
+- If you need a stability window, pin `GROK2API_BASE_IMAGE` in `Dockerfile` to a
+  specific upstream release tag, then move the tag forward during maintenance.
 - Do not copy upstream application source code into this repository unless there
   is an explicit decision to maintain a fork.
 
@@ -37,7 +37,6 @@ GROK2API_DATABASE_DRIVER=sqlite
 GROK2API_SQLITE_PATH=./data/backend.db
 GROK2API_RUNTIME_STORE_DRIVER=memory
 GROK2API_MEDIA_PATH=./data/media
-GROK2API_PREFER_FREE_BUILD=true
 ```
 
 ## Storage
