@@ -9,11 +9,10 @@ variables so Zeabur can run the service without a single-file config mount.
 
 ## Update Policy
 
-- Default base image: `ghcr.io/chenyme/grok2api:latest`.
-- To follow upstream manually, redeploy this service when the upstream image is
-  updated.
-- If you need a stability window, pin `GROK2API_BASE_IMAGE` in `Dockerfile` to a
-  specific upstream release tag, then move the tag forward during maintenance.
+- Default base image: `ghcr.io/chenyme/grok2api:v3.0.4`.
+- This wrapper pins the upstream release tag for reproducible Zeabur deploys.
+- To follow upstream manually, move `GROK2API_BASE_IMAGE` in `Dockerfile` to
+  the new upstream release tag, then redeploy this service.
 - Do not copy upstream application source code into this repository unless there
   is an explicit decision to maintain a fork.
 

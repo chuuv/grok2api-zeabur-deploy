@@ -9,13 +9,14 @@ the official upstream container image.
 
 - Do not maintain a fork of upstream `grok2api` source code here.
 - Keep application updates upstream-driven by rebuilding the wrapper image from
-  the upstream `ghcr.io/chenyme/grok2api:latest` image.
+  a pinned upstream `ghcr.io/chenyme/grok2api` release image.
 - Keep real secrets only in Zeabur environment variables.
 - Keep persistent runtime data on a Zeabur disk mounted at `/app/data`.
 
 ## Current Deployment Shape
 
-- Base image: `ghcr.io/chenyme/grok2api:latest`.
+- Base image: `ghcr.io/chenyme/grok2api:v3.0.4`.
+- Current pinned upstream version: `v3.0.4` (released 2026-07-18).
 - Wrapper entrypoint writes `/run/grok2api/config.yaml` from environment
   variables, then delegates to upstream `/usr/local/bin/grok2api-entrypoint`.
 - Single-instance storage starts with SQLite plus local media under `/app/data`.
